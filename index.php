@@ -1,56 +1,11 @@
 <?php
-$nama="abdul";
-$umur=20;
-$tinggi=170.5;
-$menikah=true;
-$hoby=["membaca","berenang","bermain gitar"];
-
-echo "nama saya $nama, umur saya $umur, tinggi saya $tinggi cm, status saya $menikah";
-echo "<br><br>==========================<br><br>";
-
-//OPERATOR
-$nilai1 = 5;
-$nilai2 = 8;
-$nilai3 = 10;
-$nilai4 = 20;
-$nilai5 = 13;
-
-$hasil = $nilai1 + $nilai2 - $nilai3 * $nilai4 /$nilai5;
-
-echo "hasil dari $nilai1 + $nilai2 - $nilai3 * $nilai4 /$nilai5 adalah $hasil";
-
-echo "<br><br>==========================<br><br>";
-//PERCABANGAN
- $nilai = 70;
-
- if($nilai >= 85){
-    echo "Grade A";
- } else if($nilai >= 70){
-    echo "Grade B";
- } else if($nilai >= 50){
-    echo "Grade C";
- } else if($nilai >= 30){
-    echo "Grade D";
- } else {
-    echo "Grade E";
- }
-
- echo "<br><br>==========================<br><br>";
- //PERCABANGAN GANJIL GENAP
- $nilai1 = 5;
- $nilai2 = 8;
- $nilai3 = 10;
- $nilai4 = 20;
- $nilai5 = 13;
- 
- $hasil = $nilai1 + $nilai2 - $nilai3  * $nilai4 /$nilai5;
-
- echo "hasil: $hasil <br>";
- $bulat = (int) $hasil;
- if ($bulat % 2 == 0) {
-   echo "genap";
- }else{
-   echo "ganjil";
- }
-?>
-   
+echo "<br><br><a href='materi1.php'>materi 1 : if dan else</a>";
+echo "<br><br><a href='materi2.php'>materi 2 : looping</a>";
+echo "<br><br><a href='materi3.php'>materi 3 :</a>";
+echo "<br><br><a href='materi4.php'>materi 4 :</a>";
+echo "<br><br><a href='materi5.php'>materi 5 :</a>";
+echo "<br><br><a href='materi6.php'>materi 6 :</a>";
+echo "<br><br><a href='materi7.php'>materi 7 :</a>";
+echo "<br><br><a href='materi8.php'>materi 8 :</a>";
+echo "<br><br><a href='materi9.php'>materi 9 :</a>";
+?> 

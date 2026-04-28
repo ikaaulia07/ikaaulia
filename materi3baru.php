@@ -50,3 +50,34 @@ if (isset($_POST["angka1"])){
       
 }
 
+function login(string $username, string $password){
+   $usernamebenar = "admin";
+   $passwordbenar = "12345";
+   if($username == $usernamebenar && $password == $passwordbenar){
+      return true;
+   }else{
+   return false;
+}
+}
+
+?>
+
+<form method = "POST">
+    <label for = "username">username:</label>
+    <input type = "text" name = "username"><br><br>
+    <label for = "password">username:</label>
+    <input type = "password" name = "password" ><br><br>
+    <input type = "submit" name = "login" value = "login"> 
+</form>
+
+<?php
+if (isset($_POST["login"])){
+   $newusername = $_POST["username"];
+   $newpassword = $_POST["password"];
+   if (login ($newusername, $newpassword)){
+      echo "Login Berhasil";
+   }else {
+      echo "Login Gagal";
+   }
+}
+?>

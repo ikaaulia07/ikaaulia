@@ -18,10 +18,10 @@ if(isset($_POST['kirim'])) {
 ?>
 
 <form method = "POST">
-    Username : <input type= "text" name= "username">
-    Password : <input type= "password" name= "password">
-    Nama : <input type= "text" name= "nama">
-    Email : <input type= "email" name= "email">
+    username : <input type= "text" name= "username">
+    password : <input type= "password" name= "password">
+    nama : <input type= "text" name= "nama">
+    email : <input type= "email" name= "email">
     <input type= "submit" value= "Kirim Data" name= "kirim">
 </form>
 
@@ -47,8 +47,8 @@ while ($row = mysqli_fetch_assoc($query)) {
     <td>{$row['password']}</td>
     <td>{$row['nama']}</td>
     <td>{$row['email']}</td>
-    <td><a href='materi4.php?hapus={$row['id']}'>Hapus</a> | <a href=?edit={$row['id']}'>Edit</a> </td>
-    <tr>";
+    <td><a href='materi4.php?hapus={$row['id']}'>Hapus</a> | <a href=?edit={$row['id']}>Edit</a> </td>
+    </tr>";
 }
 
 //proses hapus
@@ -61,6 +61,47 @@ if (isset($_GET['hapus'])) {
         echo "Data berhasil dihapus";
     } else {
         echo "Data gagal dihapus";
+    }
+}
+?>
+
+
+</table>
+
+<?php
+// proses edit
+if (isset($_GET["edit"])) {
+    $id = $_GET["edit"];
+    $sql = "SELECT * FROM user WHERE id='$id'";
+    $query = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($query);
+
+    echo "<form method='POST'>
+    Username : <input type='text' name='username' value='{$row['username']}'><br>
+    Password : <input type='password' name='password' value='{$row['password']}'><br>
+    Nama : <input type='text' name='nama' value='{$row['nama']}'><br>
+    Email : <input type='email' name='email' value='{$row['email']}'><br>
+    <input type='submit' value='EDIT DATA' name='edit'>
+    </form>";
+}
+
+if (isset($_POST['edit'])) {
+
+    $id = $_GET['edit'];
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $nama = $_POST['nama'];
+    $email = $_POST['email'];
+
+    $sql = "UPDATE user SET username='$username', password='$password',nama='$nama', email='$email' WHERE id='$id'";
+
+    $query = mysqli_query($conn, $sql);
+
+    if ($query) {
+        echo "Data Berhasil Diupdate";
+    } else {
+        echo "Data Gagal Diupdate";
     }
 }
 ?>
